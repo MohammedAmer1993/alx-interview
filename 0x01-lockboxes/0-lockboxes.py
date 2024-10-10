@@ -6,6 +6,8 @@ if we have every key for a box'''
 
 def canUnlockAll(boxes):
     array = [0]
+    if len(boxes) == 0:
+        return False
 
     def recfunc(count):
         for i in boxes[count]:
