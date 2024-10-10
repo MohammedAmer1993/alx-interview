@@ -14,6 +14,8 @@ def canUnlockAll(boxes):
         False: if we miss some keys
     '''
     array = [0]
+    if len(boxes) == 0:
+        return False
 
     def recfunc(count):
         ''' function to do recursive search
