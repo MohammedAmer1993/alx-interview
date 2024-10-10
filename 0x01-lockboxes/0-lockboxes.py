@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 ''' this is a function to solve dynamic programming problem the
-problem is we have boxes of boxes and we need to know if we have every key for a box'''
+problem is we have boxes of boxes and we need to know
+if we have every key for a box'''
 
 
 def canUnlockAll(boxes):
