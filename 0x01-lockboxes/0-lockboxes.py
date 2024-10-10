@@ -11,7 +11,7 @@ def canUnlockAll(boxes):
         for i in boxes[count]:
             if i in array:
                 return
-            else:
+            elif i in range(len(boxes)):
                 array.append(i)
                 recfunc(i)
     recfunc(0)
