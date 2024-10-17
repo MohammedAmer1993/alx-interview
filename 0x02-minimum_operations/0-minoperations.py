@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-''' this is a module for finding minimum number of operation to copy a content of a file reapeatdly'''
+''' this is a module for finding minimum number of
+ operation to copy a content of a file reapeatdly'''
 
 
 def minOperations(n):
