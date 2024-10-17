@@ -22,7 +22,7 @@ def minOperations(n):
                 263, 269, 271, 277, 281, 283, 293]
     numberOfOper = 0
     if n == 1:
-        return 1
+        return 0
     for i in primeNum:
         if n % i == 0:
             numberOfOper = i + minOperations(int(n / i))
