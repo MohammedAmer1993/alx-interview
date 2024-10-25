@@ -11,6 +11,12 @@ responseCount = [0, 0, 0, 0, 0, 0, 0, 0]
 
 
 def parserStatusCode(line):
+    '''function to get status code
+    args:
+        line (str) the line to be parsed
+    Return:
+        string continig status code
+    '''
     index = line.find('"')
     index = line.find('"', index + 1)
     indexEnd = line.find(' ', index + 2)
@@ -18,6 +24,12 @@ def parserStatusCode(line):
 
 
 def parserFileSize(line):
+    '''function to get file size
+    args:
+        line (str) the line to be parsed
+    Return:
+        string continig file size
+    '''
     index = line.find('"')
     index = line.find('"', index + 1)
     indexSpace = line.find(' ', index + 2)
@@ -25,6 +37,12 @@ def parserFileSize(line):
 
 
 def printOutput(responseState, responseCount, totalSize):
+    ''' function to print the log in prefered format
+    args:
+        responseState (arr of ints) the stats code possible
+        responseCount (arr of ints) the count for each code occourance
+        totalSize: the total size of response
+    '''
     print(f"File size: {totalSize}")
     for item, index in enumerate(responseState):
         if responseCount[index] == 0:
@@ -34,6 +52,11 @@ def printOutput(responseState, responseCount, totalSize):
 
 
 def sigIntHandler(signum, frame):
+    '''function to handle the sig intrupt
+    args:
+        signum the number of signal
+        frame the time of signal
+    '''
     printOutput(responseState, responseCount, totalSize)
     sys.exit(0)
 
