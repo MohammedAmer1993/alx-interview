@@ -4,6 +4,7 @@ and get the total size and the status code stats'''
 
 import sys
 import signal
+import time
 
 totalSize = 0
 responseState = [200, 301, 400, 401, 403, 404, 405, 500]
@@ -61,10 +62,9 @@ def sigIntHandler(signum, frame):
     sys.exit(0)
 
 
-signal.signal(signal.SIGINT, sigIntHandler)
-
 if __name__ == "__main__":
 
+    signal.signal(signal.SIGINT, sigIntHandler)
     n = 0
     for line in sys.stdin:
         statusCode = parserStatusCode(line)
