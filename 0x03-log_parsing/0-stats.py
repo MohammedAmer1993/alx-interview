@@ -7,7 +7,7 @@ import signal
 
 totalSize = 0
 responseState = [200, 301, 400, 401, 403, 404, 405, 500]
-responseCount = [0, 0, 0, 0, 0, 0, 0, 0]
+responseCount = [0,    0,    0,   0, 0,    0,    0, 0]
 
 
 def parserStatusCode(line):
@@ -44,7 +44,7 @@ def printOutput(responseState, responseCount, totalSize):
         totalSize: the total size of response
     '''
     print(f"File size: {totalSize}")
-    for item, index in enumerate(responseState):
+    for index, item in enumerate(responseState):
         if responseCount[index] == 0:
             continue
         else:
@@ -80,7 +80,7 @@ if __name__ == "__main__":
         if line.find('"GET /projects/260 HTTP/1.1"') < 0:
             continue
 
-        for item, index in enumerate(responseState):
+        for index, item in enumerate(responseState):
             if StatusCodeInt == item:
                 responseCount[index] = responseCount[index] + 1
                 break
