@@ -8,11 +8,11 @@ def isWinner(x, nums):
 
     Args:
       x: The number of rounds.
-      nums: An array of n, where n is the upper limit of consecutive integers 
+      nums: An array of n, where n is the upper limit of consecutive integers
             for each round.
 
     Returns:
-      The name of the player that won the most rounds, or None if 
+      The name of the player that won the most rounds, or None if
       the winner cannot be determined.
     """
     if x <= 0 or not nums:  # Handle invalid input
