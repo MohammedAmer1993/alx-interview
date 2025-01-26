@@ -15,6 +15,9 @@ def isWinner(x, nums):
       The name of the player that won the most rounds, or None if 
       the winner cannot be determined.
     """
+    if x <= 0 or not nums:  # Handle invalid input
+        return None
+
     def is_prime(n):
         """
         Checks if a number is prime.
@@ -30,7 +33,7 @@ def isWinner(x, nums):
         """
         Generates a list of prime numbers up to n.
         """
-        primes = []
+        primes =
         for i in range(2, n + 1):
             if is_prime(i):
                 primes.append(i)
@@ -40,6 +43,9 @@ def isWinner(x, nums):
         """
         Simulates a single round of the game.
         """
+        if n <= 1:  # Handle cases where n is 0 or 1
+            return "Ben"  # Maria cannot make a move
+
         numbers = list(range(1, n + 1))
         primes = get_primes(n)
         player = 0  # 0 for Maria, 1 for Ben
@@ -67,6 +73,3 @@ def isWinner(x, nums):
     if maria_wins > ben_wins:
         return "Maria"
     elif ben_wins > maria_wins:
-        return "Ben"
-    else:
-        return None
