@@ -8,11 +8,11 @@ def isWinner(x, nums):
 
     Args:
       x: The number of rounds.
-      nums: An array of n, where n is the upper limit of consecutive integers
+      nums: An array of n, where n is the upper limit of consecutive integers 
             for each round.
 
     Returns:
-      The name of the player that won the most rounds, or None if
+      The name of the player that won the most rounds, or None if 
       the winner cannot be determined.
     """
     if x <= 0 or not nums:  # Handle invalid input
@@ -31,13 +31,15 @@ def isWinner(x, nums):
 
     def get_primes(n):
         """
-        Generates a list of prime numbers up to n.
+        Generates a list of prime numbers up to n using Sieve of Eratosthenes.
         """
-        primes = []
-        for i in range(2, n + 1):
-            if is_prime(i):
-                primes.append(i)
-        return primes
+        primes = [True] * (n + 1)
+        primes[0] = primes[1] = False
+        for i in range(2, int(n**0.5) + 1):
+            if primes[i]:
+                for multiple in range(i * i, n + 1, i):
+                    primes[multiple] = False
+        return [i for i, is_prime in enumerate(primes) if is_prime]
 
     def play_game(n):
         """
