@@ -33,7 +33,7 @@ def isWinner(x, nums):
         """
         Generates a list of prime numbers up to n.
         """
-        primes =
+        primes = []
         for i in range(2, n + 1):
             if is_prime(i):
                 primes.append(i)
